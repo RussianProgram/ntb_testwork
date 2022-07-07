@@ -25,7 +25,7 @@ from host.views import (
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', include('host.urls')),
-    path('login/', login_view, name='login'),
-    path('logout/', logout_view, name='logout'),
-    path('register/', register, name='register'),
+    path('accounts/login/', login_view, name='login'),
+    path('accounts/logout/', logout_view, name='logout'),
+    path('accounts/register/', register, name='register'),
 ]

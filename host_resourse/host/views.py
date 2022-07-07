@@ -19,10 +19,10 @@ def register(request):
     form = UserCreationForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('/login')
+        return redirect('/accounts/login')
 
     return render(request,
-                  'regisration/register.html',
+                  'registration/register.html',
                   {'form':form})
 
 """
@@ -48,7 +48,7 @@ View для выхода из аккаунта
 def logout_view(request):
     if request.method == 'POST':
         logout(request)
-        return redirect('/login')
+        return redirect('/accounts/login')
 
     return render(request, "registration/logout.html")
 
@@ -67,6 +67,8 @@ class HostListView(LoginRequiredMixin, ListView):
             return Host.objects.all()
 
         return User.hosts.all()
+
+
 
 
 """

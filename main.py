@@ -10,14 +10,6 @@ def hmac_encode(msg):
     return h.digest()
 
 
-"""
-b'Key: n5AUbpMiEGV1WvAcgvjFdm75vDqrvFlm884ZN9IEBjJshGgOouCuNx'
-b'Sign your email with HMAC256 and send it back'
-b'<email>:<hmac(email)>'
-b'Example:'
-b'user@example.com:{i\x89E\n\x82\xb2L\r\x92\xb8\x92\xc0\xac-eoT\xabIOwz\t\xf9U\x17Ea{\xf7F'
-"""
-
 if __name__=='__main__':
     ip = "ws://46.229.214.188/"
     ws = create_connection(ip)
@@ -27,7 +19,7 @@ if __name__=='__main__':
     ws.recv() # b'Example:'
     ws.recv() # b'user@example.com:{i\x89E\n\x82\xb2L\r\x92\xb8\x92\xc0\xac-eoT\xabIOwz\t\xf9U\x17Ea{\xf7F'
 
-    email = 'kurban.kerimhanov@mail.ru:'
+    email = 'k....n.k.......v@mail.ru:'
     email_hmac = hmac_encode(email[:-1])
 
     result_send = bytes(email.encode()) + email_hmac

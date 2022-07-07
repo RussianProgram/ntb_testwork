@@ -12,7 +12,7 @@
             {% if form.errors %}
                 <p>Your username and password didn't match. Please try again.</p>
             {% else %}
-                <p>Please, use the following form to log-in. If you dont have an account <a href="/register">register here</a></p>
+                <p>Please, use the following form to log-in. If you dont have an account <a href="/accounts/register">register here</a></p>
             {% endif %}
             <div class="login-form">
                 <form method="post">
@@ -25,7 +25,7 @@
             </div>
 
     {% else %}
-        <p>You're already logged in. Would you like to <a href='/logout'>logout</a>?</p>
+        <p>You're already logged in. Would you like to <a href='/accounts/logout'>logout</a>?</p>
     {% endif %}
 
 {% endblock %}
